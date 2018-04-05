@@ -1,0 +1,3 @@
+DROP TABLE tb_discuss_comment
+DROP TABLE tb_discuss_pseudonym
+DROP TABLE tb_discuss_followers
