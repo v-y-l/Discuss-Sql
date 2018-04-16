@@ -9,7 +9,7 @@ CREATE TABLE tb_discuss_comment (
 )
 
 CREATE TABLE tb_discuss_pseudonym (
-	pseudonym bigint NOT NULL,
+	pseudonym bigint IDENTITY(1,1) NOT NULL,
 	fk_pk_feedbackapp_response_id bigint NOT NULL,
 	fk_pk_security_userid bigint NOT NULL,
 	FOREIGN KEY (fk_pk_feedbackapp_response_id) REFERENCES tb_feedbackapp_response (pk_feedbackapp_response_id),
@@ -20,7 +20,7 @@ CREATE TABLE tb_discuss_pseudonym (
 CREATE TABLE tb_discuss_followers (
 	follower_id bigint NOT NULL,
 	followee_id bigint NOT NULL,
-	does_follow int NOT NULL ,
+	follows     int NOT NULL ,
 	FOREIGN KEY (follower_id) REFERENCES tb_security_user (pk_security_userid),
 	FOREIGN KEY (followee_id) REFERENCES tb_security_user (pk_security_userid),
 	PRIMARY KEY (follower_id, followee_id)
