@@ -1,0 +1,3 @@
+DELETE FROM tb_discuss_comment
+DELETE FROM tb_discuss_pseudonym
+DELETE FROM tb_discuss_followers
